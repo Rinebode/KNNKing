@@ -42,16 +42,17 @@ int selection_sort(int n, int array_of_nums[n]) {
     int i, highest, current_number;
 
     for (i = 0; i < n; i++) {
+
+        if (n - 1 == 0) {
+            return 0;
+        }
+
         highest = array_of_nums[n-1];
         current_number = array_of_nums[i];
         if (current_number > highest) {
             array_of_nums[i] = highest;
             array_of_nums[n - 1] = current_number;
         }
-    }
-
-    if (n - 1 == 0) {
-        return 0;
     }
 
     selection_sort(n - 1, array_of_nums);
